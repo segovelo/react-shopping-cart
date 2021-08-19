@@ -51,3 +51,7 @@ Create a react app with typescript:
 c:\serverless-projects> npx create-react-app react-shopping-cart --template typescript
 
 Dependecies:
+npm install @material-ui/core @material-ui/icons
+npm install react-query
+npm install styled-components @types/styled-components
+yarn add @types/react --dev
