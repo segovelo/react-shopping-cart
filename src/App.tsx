@@ -11,6 +11,7 @@ import Badge from '@material-ui/core/Badge';
 // Styles
 import { Wrapper, StyledButton } from './App.styles';
 import { AddShoppingCart } from '@material-ui/icons';
+import {StyledShoppingCartIcon} from './Cart/Cart.styles';
 //Types
 export type CartItemType = {
   id: number;
@@ -47,7 +48,19 @@ const App = () => {
       return [...prev, { ...clickedItem, amount: 1 }];
     });
   };
-  const handleRemoveFromCart = () => null;
+  const handleRemoveFromCart = (id: number) => {
+    setCartItems(prev => (
+      prev.reduce((acc, item) => {
+        if(item.id === id){
+          if(item.amount === 1) return acc;
+          return [...acc, {...item, amount: item.amount - 1}];
+        } else {
+          return [...acc, item];
+        }
+      }, [] as CartItemType[])
+    ))
+  };
+
   if (isLoading) return <LinearProgress />;
   if (error) return <div> Something went wrong ... </div>;
 
@@ -62,7 +75,7 @@ const App = () => {
       </Drawer>
       <StyledButton onClick={() => setCartOpen(true)}>
         <Badge badgeContent={getTotalItems(cartItems)} color='error'>
-          <AddShoppingCartIcon />
+            <AddShoppingCartIcon />
         </Badge>
       </StyledButton>
       <Grid container spacing={3}>

@@ -10,4 +10,7 @@ export const StyledButton = styled(IconButton)`
     z-index: 100;
     right: 20px;
     top: 20px;
+    border-radius: 10px;
+    border: 2px solid #858585;
+    padding: 5px;
 `;
