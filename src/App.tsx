@@ -12,7 +12,7 @@ import DoubleArrowRoundedIcon from '@material-ui/icons/DoubleArrowRounded';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 import Badge from '@material-ui/core/Badge';
 // Styles
-import { Wrapper, StyledButton, StyledArrowButton, StyledDrawer } from './App.styles';
+import { Wrapper, StyledButton, StyledArrowButton} from './App.styles';
 import { AddShoppingCart } from '@material-ui/icons';
 import {StyledShoppingCartIcon} from './Cart/Cart.styles';
 //Types
@@ -69,7 +69,7 @@ const App = () => {
 
   return (
     <Wrapper>
-      <StyledDrawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
+      <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
         <StyledArrowButton onClick={() => setCartOpen(false)}>
           <DoubleArrowIcon/>
         </StyledArrowButton>     
@@ -78,7 +78,7 @@ const App = () => {
           addToCart={handleAddToCart}
           removeFromCart={handleRemoveFromCart}
         />
-      </StyledDrawer>
+      </Drawer>
       <StyledButton onClick={() => setCartOpen(true)}>
         <Badge badgeContent={getTotalItems(cartItems)} color='error'>
             <AddShoppingCartIcon />

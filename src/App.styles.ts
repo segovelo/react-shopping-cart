@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import IconButton from '@material-ui/core/IconButton';
-import Drawer from '@material-ui/core/Drawer';
 
 export const Wrapper = styled.div`
     margin: 40px;
@@ -9,23 +8,22 @@ export const Wrapper = styled.div`
 export const StyledButton = styled(IconButton)` 
     position: fixed;
     z-index: 100;
-    right: 20px;
-    top: 20px;
+    right: 10px;
+    top: 10px;
     border-radius: 10px;
     border: 2px solid #858585;
     padding: 5px;
+    width:30px;
+    height:30px;
 `;
 
 export const StyledArrowButton = styled(IconButton)`
     position: fixed;
     z-index: 100;
-    right: 20px;
-    top: 20px;
-    border-radius: 10px;
+    right: 295px;
+    top: 5px;
+    border-radius: 5px;
     border: 2px solid #858585;
-    padding: 5px;
-`;
-
-export const StyledDrawer = styled(Drawer)` 
-    width=1000px;
+    padding: 5px;   
+    height:30px;
 `;
