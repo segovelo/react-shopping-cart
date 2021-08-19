@@ -7,9 +7,12 @@ import Drawer from '@material-ui/core/Drawer';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Grid from '@material-ui/core/Grid';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import ArrowForwardRoundedIcon from '@material-ui/icons/ArrowForwardRounded';
+import DoubleArrowRoundedIcon from '@material-ui/icons/DoubleArrowRounded';
+import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 import Badge from '@material-ui/core/Badge';
 // Styles
-import { Wrapper, StyledButton } from './App.styles';
+import { Wrapper, StyledButton, StyledArrowButton, StyledDrawer } from './App.styles';
 import { AddShoppingCart } from '@material-ui/icons';
 import {StyledShoppingCartIcon} from './Cart/Cart.styles';
 //Types
@@ -66,13 +69,16 @@ const App = () => {
 
   return (
     <Wrapper>
-      <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
+      <StyledDrawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
+        <StyledArrowButton onClick={() => setCartOpen(false)}>
+          <DoubleArrowIcon/>
+        </StyledArrowButton>     
         <Cart
           cartItems={cartItems}
           addToCart={handleAddToCart}
           removeFromCart={handleRemoveFromCart}
         />
-      </Drawer>
+      </StyledDrawer>
       <StyledButton onClick={() => setCartOpen(true)}>
         <Badge badgeContent={getTotalItems(cartItems)} color='error'>
             <AddShoppingCartIcon />
