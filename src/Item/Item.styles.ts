@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
 
 export const Wrapper = styled.div`
     display: flex;
@@ -8,10 +9,6 @@ export const Wrapper = styled.div`
     border: 2px solid lightblue;
     border-radius: 20px;
     height:100%;
-
-    button {
-        border-radius: 0 0 20px 20px;
-    }
 
     img {
         max-height: 250px;
@@ -24,5 +21,18 @@ export const Wrapper = styled.div`
         font-family: Arial, Helvetica, sans-seriff;
         padding: 1rem;
         height:100%;
+    }
+`;
+
+export const StyledButton = styled(Button)`
+    font-size: 16px;
+    font-weight: bold;
+    padding:10px;
+    border-radius: 20px;
+    border: 2px solid #CEEBED;
+    margin:10px;
+    background-color: #DAEBED;
+    : hover {
+        background-color: #858585;
     }
 `;

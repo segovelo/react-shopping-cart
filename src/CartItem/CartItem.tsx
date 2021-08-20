@@ -22,16 +22,17 @@ const CartItem: React.FC<Props> = ({ item, addToCart, removeFromCart, deleteFrom
                 <p>Subtotal: ${(item.amount * item.price).toFixed(2)}</p>
             </div>
             <div className='buttons'>
-                <StyledButton 
+                <StyledButton title="Down"
                     onClick={() => removeFromCart(item.id)}>
                     <RemoveCircleOutlineIcon/>
                 </StyledButton>
                 <p className='item-amount'>{item.amount}</p>
-                <StyledButton 
+                <StyledButton title="Add"
                     onClick={() => addToCart(item)}>
                     <AddCircleOutlineIcon/>
                 </StyledButton>
-                <StyledButton onClick={() => deleteFromCart(item.id)}>
+                <StyledButton title="Remove Item" 
+                    onClick={() => deleteFromCart(item.id)}>
                     <DeleteIcon/>
                 </StyledButton>
 

@@ -11,8 +11,9 @@ import ArrowForwardRoundedIcon from '@material-ui/icons/ArrowForwardRounded';
 import DoubleArrowRoundedIcon from '@material-ui/icons/DoubleArrowRounded';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 import Badge from '@material-ui/core/Badge';
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 // Styles
-import { Wrapper, StyledButton, StyledArrowButton} from './App.styles';
+import { Wrapper, StyledButton, StyledArrowButton, StyledEmptyButton} from './App.styles';
 import { AddShoppingCart } from '@material-ui/icons';
 import {StyledShoppingCartIcon} from './Cart/Cart.styles';
 //Types
@@ -76,6 +77,9 @@ const App = () => {
     ))
   };
 
+  const handleEmptyCart = () => {
+    setCartItems([]);
+  }
 
   if (isLoading) return <LinearProgress />;
   if (error) return <div> Something went wrong ... </div>;
@@ -83,9 +87,12 @@ const App = () => {
   return (
     <Wrapper>
       <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
-        <StyledArrowButton onClick={() => setCartOpen(false)}>
+        <StyledArrowButton title="Close" onClick={() => setCartOpen(false)}>
           <DoubleArrowIcon/>
-        </StyledArrowButton>     
+        </StyledArrowButton>  
+        <StyledEmptyButton title= "Empty Cart" onClick={() => handleEmptyCart()}>
+           <DeleteOutlineIcon/>   
+        </StyledEmptyButton>   
         <Cart
           cartItems={cartItems}
           addToCart={handleAddToCart}
@@ -93,7 +100,7 @@ const App = () => {
           deleteFromCart={handleDeleteFromCart}
         />
       </Drawer>
-      <StyledButton onClick={() => setCartOpen(true)}>
+      <StyledButton title="Open Cart" onClick={() => setCartOpen(true)}>
         <Badge badgeContent={getTotalItems(cartItems)} color='error'>
             <AddShoppingCartIcon />
         </Badge>

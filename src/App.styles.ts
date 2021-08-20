@@ -35,3 +35,20 @@ export const StyledArrowButton = styled(IconButton)`
         background-color: #7F7F7F;
     }
 `;
+
+export const StyledEmptyButton = styled(IconButton)`
+    position: fixed;
+    z-index: 100;
+    right: 20px;
+    top: 5px;
+    border-radius: 5px;
+    border: 2px solid #858585;
+    padding: 5px;   
+    height:30px;
+    background-color: #EEEEEE;
+    : hover {
+        background-color: #7F7F7F;
+        
+    }
+`;
+
