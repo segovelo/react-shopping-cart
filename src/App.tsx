@@ -64,6 +64,19 @@ const App = () => {
     ))
   };
 
+  const handleDeleteFromCart = (id: number) => {
+    setCartItems(prev => (
+      prev.reduce((acc, item) => {
+        if(item.id === id){
+          return acc;
+        } else {
+          return [...acc, item];
+        }
+      }, [] as CartItemType[])
+    ))
+  };
+
+
   if (isLoading) return <LinearProgress />;
   if (error) return <div> Something went wrong ... </div>;
 
@@ -77,6 +90,7 @@ const App = () => {
           cartItems={cartItems}
           addToCart={handleAddToCart}
           removeFromCart={handleRemoveFromCart}
+          deleteFromCart={handleDeleteFromCart}
         />
       </Drawer>
       <StyledButton onClick={() => setCartOpen(true)}>

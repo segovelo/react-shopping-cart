@@ -15,15 +15,23 @@ export const StyledButton = styled(IconButton)`
     padding: 5px;
     width:30px;
     height:30px;
+    background-color: #EEEEEE;
+    : hover {
+        background-color: #7F7F7F;
+    }
 `;
 
 export const StyledArrowButton = styled(IconButton)`
     position: fixed;
     z-index: 100;
-    right: 295px;
+    right: 300px;
     top: 5px;
     border-radius: 5px;
     border: 2px solid #858585;
     padding: 5px;   
     height:30px;
+    background-color: #EEEEEE;
+    : hover {
+        background-color: #7F7F7F;
+    }
 `;

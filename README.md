@@ -55,3 +55,12 @@ npm install @material-ui/core @material-ui/icons
 npm install react-query
 npm install styled-components @types/styled-components
 yarn add @types/react --dev
+
+                <Button
+                    size='small'
+                    disableElevation
+                    variant='contained'
+                    onClick={() => addToCart(item)}
+                >
+                    +
+                </Button>
