@@ -5,6 +5,16 @@ export const Wrapper = styled.div`
     margin: 40px;
 `;
 
+export const Navbar = styled.div`
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    height: 40px;
+    width: 340px;
+    background-color: #FFFFFF;
+`;
+
 export const StyledButton = styled(IconButton)` 
     position: fixed;
     z-index: 100;

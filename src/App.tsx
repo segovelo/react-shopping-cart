@@ -7,15 +7,11 @@ import Drawer from '@material-ui/core/Drawer';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Grid from '@material-ui/core/Grid';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import ArrowForwardRoundedIcon from '@material-ui/icons/ArrowForwardRounded';
-import DoubleArrowRoundedIcon from '@material-ui/icons/DoubleArrowRounded';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 import Badge from '@material-ui/core/Badge';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 // Styles
-import { Wrapper, StyledButton, StyledArrowButton, StyledEmptyButton} from './App.styles';
-import { AddShoppingCart } from '@material-ui/icons';
-import {StyledShoppingCartIcon} from './Cart/Cart.styles';
+import { Wrapper, Navbar, StyledButton, StyledArrowButton, StyledEmptyButton} from './App.styles';
 //Types
 export type CartItemType = {
   id: number;
@@ -87,12 +83,14 @@ const App = () => {
   return (
     <Wrapper>
       <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
+        <Navbar>
         <StyledArrowButton title="Close" onClick={() => setCartOpen(false)}>
           <DoubleArrowIcon/>
         </StyledArrowButton>  
         <StyledEmptyButton title= "Empty Cart" onClick={() => handleEmptyCart()}>
            <DeleteOutlineIcon/>   
         </StyledEmptyButton>   
+        </Navbar>
         <Cart
           cartItems={cartItems}
           addToCart={handleAddToCart}
