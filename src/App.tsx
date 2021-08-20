@@ -10,6 +10,7 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 import Badge from '@material-ui/core/Badge';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import ScrollArrow from './ScrollArrow/ScrollArrow';
 // Styles
 import { Wrapper, Navbar, StyledButton, StyledArrowButton, StyledEmptyButton} from './App.styles';
 //Types
@@ -82,6 +83,7 @@ const App = () => {
 
   return (
     <Wrapper>
+      <ScrollArrow/>
       <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
         <Navbar>
         <StyledArrowButton title="Close" onClick={() => setCartOpen(false)}>
